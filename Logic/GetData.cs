@@ -1,4 +1,6 @@
+using System;
 using System.Net;
+using System.Runtime.InteropServices;
 
 namespace MainRequest
 {
@@ -16,7 +18,6 @@ namespace MainRequest
             google = new Uri($"http://google.com/search?q={searchRequest}"); //initialize variable by searched word
         }
 
-
     }
 
     class CollectData
@@ -33,28 +34,34 @@ namespace MainRequest
         {
             List<object> resources = new List<object>();
 
-            mshtml.HTMLDocument doc = null;
-            mshtml.IHTMLDocument2 d2 = null;
-            mshtml.IHTMLDocument3 d = null;
+            MSHTML.HTMLDocument doc = null!;
+            MSHTML.IHTMLDocument2 d2= null!;
+            MSHTML.IHTMLDocument3 d = null!;
 
-#nullable disable
             try
             {
-                doc = new mshtml.HTMLDocument();//инициализация IE
-                d2 = (mshtml.IHTMLDocument2)doc;
+                doc = new MSHTML.HTMLDocument();
+                d2 = (MSHTML.IHTMLDocument2)doc;
                 d2.designMode = "On";
                 d2.write(html);
 
-                d = (mshtml.IHTMLDocument3)doc;
-                var coll = d.getElementsByTagName("a");//получить коллекцию элементов по имени тега
+                d = (MSHTML.IHTMLDocument3)doc;
+                var coll = d.getElementsByTagName("a");//getting collection by tag name
                 object val;
 
+                foreach(MSHTML.IHTMLElement element in coll)
+                {
+                    val = element.getAttribute("href");
+                    if (val == null) continue;
+                    resources.Add(val.ToString());
+                }
             }
             finally
             {
-
+                if (doc != null) Marshal.ReleaseComObject(doc);
+                if (d2 != null) Marshal.ReleaseComObject(d2);
+                if (d != null) Marshal.ReleaseComObject(d);
             }
-#nullable restore
             return resources;
 
         }
