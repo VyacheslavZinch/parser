@@ -13,3 +13,7 @@ C:\Users\Vaclav\Desktop\parser\parser\obj\Debug\net7.0-windows\refint\parser.dll
 C:\Users\Vaclav\Desktop\parser\parser\obj\Debug\net7.0-windows\parser.pdb
 C:\Users\Vaclav\Desktop\parser\parser\obj\Debug\net7.0-windows\parser.genruntimeconfig.cache
 C:\Users\Vaclav\Desktop\parser\parser\obj\Debug\net7.0-windows\ref\parser.dll
+C:\Users\Vaclav\Desktop\parser\parser\obj\Debug\net7.0-windows\Interop.MSHTML.dll
+C:\Users\Vaclav\Desktop\parser\parser\obj\Debug\net7.0-windows\parser.csproj.ResolveComReference.cache
+C:\Users\Vaclav\Desktop\parser\parser\obj\Debug\net7.0-windows\parser.Form1.resources
+C:\Users\Vaclav\Desktop\parser\parser\obj\Debug\net7.0-windows\parser.csproj.GenerateResource.cache
