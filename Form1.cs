@@ -1,3 +1,5 @@
+using MainRequest;
+
 namespace parser;
 
 public partial class Form1 : Form
@@ -14,8 +16,9 @@ public partial class Form1 : Form
 
     private void button2_Click(object sender, EventArgs e) //start
     {
-        string text = textBox1.Text;
-
+        string text = textBox1.Text.ToString();
+        CollectDataFromSearch collect = new CollectDataFromSearch(text);
+        collect.ParsedLink(collect._html);
 
     }
 
