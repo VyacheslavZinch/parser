@@ -30,7 +30,6 @@ partial class Form1
     {
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -55,16 +54,9 @@ partial class Form1
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(24, 272);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(747, 28);
-            this.progressBar1.TabIndex = 2;
-            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(250, 150);
+            this.textBox1.Location = new System.Drawing.Point(263, 230);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(273, 27);
             this.textBox1.TabIndex = 3;
@@ -73,20 +65,20 @@ partial class Form1
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(290, 105);
+            this.label1.Location = new System.Drawing.Point(341, 181);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 20);
+            this.label1.Size = new System.Drawing.Size(119, 20);
             this.label1.TabIndex = 4;
-            this.label1.Text = "What do you want to search?";
+            this.label1.Text = "Please enter URL";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
@@ -101,7 +93,6 @@ partial class Form1
 
     private Button button1; //info button
     private Button button2; //start button
-    private ProgressBar progressBar1;
     private TextBox textBox1;
     private Label label1;
 }

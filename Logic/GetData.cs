@@ -10,16 +10,11 @@ namespace MainRequest
 {
     class CollectDataFromSearch : IFunctions
     {
-        private readonly Uri? google;
         public readonly string _html;
-        private readonly string searchRequest;
 
-        public CollectDataFromSearch(string request)
+        public CollectDataFromSearch(string siteURL)
         {
-            google = new Uri($"http://google.com/search?q={searchRequest}"); //initialize variable by searched word
-
-            this.searchRequest = request;
-            this._html = new System.Net.WebClient().DownloadString(google); //Initialize html field from SearchSystem class
+            this._html = new System.Net.WebClient().DownloadString(siteURL); //Initialize html field from SearchSystem class
         }
         
         ~CollectDataFromSearch() //destructor
@@ -48,17 +43,14 @@ namespace MainRequest
 
                 foreach (MSHTML.IHTMLElement element in collection) //getting elements by attribute
                 {
-                    val = element.getAttribute("href"); // add searched values to list
+                    val = element.getAttribute("href");// add searched values to list
                     if (val == null) continue;
-                    else if ((val.ToString().Contains("Google")) || (val.ToString().Contains("google")))
-                    {
-                        continue;
-                    }
                     else
                     {
                         resources.Add((string)val);
+                        
                     }
-                    //resources.Add((string)val);
+
                 }
             }
             finally
@@ -68,10 +60,10 @@ namespace MainRequest
                 if (d != null) Marshal.ReleaseComObject(d);
             }
 
-            foreach(var item in resources)
-            {
-                MessageBox.Show(item.ToString());
-            }
+            //foreach(var item in resources)
+            //{
+            //    MessageBox.Show(item.ToString());
+            //}
             return resources; //return list of values
 
         }
