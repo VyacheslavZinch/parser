@@ -1,0 +1,7 @@
+namespace LocalInfoFromResponse
+{
+    class ViewData
+    {
+
+    }
+}
