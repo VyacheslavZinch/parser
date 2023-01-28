@@ -1,3 +1,4 @@
+using LocalInfoFromResponse;
 using MainRequest;
 
 namespace parser;
@@ -18,7 +19,8 @@ public partial class Form1 : Form
     {
         string text = textBox1.Text.ToString();
         CollectDataFromSearch collect = new CollectDataFromSearch(text);
-        collect.ParsedLink(collect._html);
+        ViewData generalResult = new ViewData(collect.ParsedLink(collect._html));
+        generalResult.formatData();
 
     }
 

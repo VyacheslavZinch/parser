@@ -59,11 +59,6 @@ namespace MainRequest
                 if (d2 != null) Marshal.ReleaseComObject(d2);
                 if (d != null) Marshal.ReleaseComObject(d);
             }
-
-            //foreach(var item in resources)
-            //{
-            //    MessageBox.Show(item.ToString());
-            //}
             return resources; //return list of values
 
         }
